@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transparent Login Form HTML CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .bg-img {
+            background-image: url(https://t3.ftcdn.net/jpg/05/79/48/52/360_F_579485255_hzHox0stuQmBx5QViwnQqQjk7RD2AJza.jpg);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-img:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(53, 47, 47, 0.7);
+        }
+
+        .content {
+            border-radius: 5%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 999;
+            text-align: center;
+            padding: 60px 32px;
+            width: 370px;
+            transform: translate(-50%, -50%);
+            background: rgba(68, 60, 60, 0);
+            box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.9);
+            cursor: pointer; /* Add cursor pointer */
+        }
+
+        .content:hover { /* Change appearance on hover */
+            background: rgba(68, 60, 60, 0.3);
+        }
+
+        .content header {
+            color: white;
+            font-size: 33px;
+            font-weight: 600;
+            margin: 0 0 35px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .field {
+            border-radius: 30px;
+            position: relative;
+            height: 45px;
+            width: 100%;
+            display: flex;
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+        .field span {
+            color: #222;
+            width: 40px;
+            line-height: 45px;
+        }
+
+        .field input {
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #222;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .space {
+            margin-top: 16px;
+        }
+
+        .show {
+            position: absolute;
+            right: 13px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #222;
+            display: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pass-key:valid~.show {
+            display: block;
+        }
+
+        .pass {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .pass:hover a {
+            text-decoration: underline;
+        }
+
+        .login-button {
+            background: #3498db;
+            border: 1px solid #2691d9;
+            padding: 10px 20px;
+            position: relative;
+            border-radius: 30px;
+            height: 45px;
+            width: 40%;
+            display: centre;
+        }
+
+        /* Hover effect */
+        .login-button:hover {
+            background-color: #0671d6; /* Darker green */
+        }
+
+        .signup {
+            font-size: 15px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .signup a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        .admin a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .admin:hover {
+            text-decoration: underline;
+            color: #0671d6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-img">
+        <div class="content" onclick="window.location.href='#'"> <!-- Add onclick event to redirect -->
+            <header>Admin Login</header>
+            <form action="/submit4" method="post">
+                <div class="field">
+                    <span class="fa fa-user"></span>
+                    <input type="text" id = "adminname" name="adminname" required placeholder="LoginID">
+                </div>
+                <div class="field space">
+                    <span class="fa fa-lock"></span>
+                    <input type="password" id = "password" name="password" class="pass-key" required placeholder="Password">
+
+                </div>
+                <br>
+                <button type="submit" class="login-button">LOGIN</button>
+            </form>
+</div>
+
+</body>
+
+</html>
